@@ -7,10 +7,10 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-public class TestWorld {
+public class BreakBricks {
     static final int FRAME_WIDTH = 1000;
     static final int FRAME_HEIGHT = 700;
-    static final int WALL_THICKNESS = 100;
+    static final int WALL_THICKNESS = 50;
 
     static final int MIN_RADIUS = 20;
     static final int MAX_RADIUS = 50;
@@ -91,20 +91,16 @@ public class TestWorld {
         world.add(boundedBall);
     }
 
-    private static void Start() {
+    public static void Start() {
         JFrame frame = new JFrame();
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         MovableWorld world = new MovableWorld();
-        TestWorld.initializeWorld(world);
+        BreakBricks.initializeWorld(world);
         frame.add(world);
         world.setDT(DEFAULT_DT);
         world.setMaxMoveCount(2000);
         frame.setVisible(true);
         world.run();
-    }
-
-    public static void main(String[] args) {
-        TestWorld.Start();
     }
 }

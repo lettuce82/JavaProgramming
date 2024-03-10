@@ -33,28 +33,25 @@ public class Box implements Regionable{
         return (int)region.getHeight();
     }
 
-    void setX(int x) {
-        region.setLocation(x - getWidth() / 2, getLocation().getY() - getHeight() / 2);
+    void setX(double x) {
+        region.setLocation((int) (x - getWidth() / 2), getLocation().getY() - getHeight() / 2);
     }
 
-    void setY(int y) {
-        region.setLocation(getLocation().getX() - getWidth() / 2, y - getHeight() / 2);
+    void setY(double y) {
+        region.setLocation(getLocation().getX() - getWidth() / 2, (int) (y - getHeight() / 2));
+    }
+
+    public double getX() {
+        return region.getCenterX();
+    }
+
+    public double getY() {
+        return region.getCenterY();
     }
 
     public Rectangle getRegion() {
         return this.region;
     }
-
-    /*
-     * getLocaton() 얻을 수 있어서 임시 삭제 -> getLocation() 임시 추가
-    public int getX() {
-        return (int)region.getCenterX();
-    }
-
-    public int getY() {
-        return (int)region.getCenterY();
-    }
-     */
 
     @Override
     public int getId() {

@@ -39,7 +39,7 @@ public class PaintableBox extends Box implements Paintable {
         g.setColor(getColor());
         g.fillRect((int)getRegion().getMinX(), (int)getRegion().getMinY(), getWidth(), getHeight());
         // 영역 표시해보기
-        g.setColor(Color.BLUE);
+        g.setColor(Color.GRAY);
         g.drawRect((int)getRegion().getX(), (int)getRegion().getY(), getWidth(), getHeight());
     
         g.setColor(originalColor);

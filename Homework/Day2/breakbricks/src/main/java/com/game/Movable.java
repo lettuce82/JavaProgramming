@@ -6,13 +6,13 @@ public interface Movable {
      */
     public void move();
 
-    public void moveTo(int x, int y);
+    public void moveTo(double x, double y);
 
-    public void setDX(int dx);
+    public void setDX(double dx);
 
-    public void setDY(int dy);
+    public void setDY(double dy);
 
-    public int getDX();
+    public double getDX();
 
-    public int getDY();
+    public double getDY();
 }

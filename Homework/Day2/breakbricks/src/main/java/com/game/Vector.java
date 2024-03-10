@@ -1,9 +1,10 @@
+// Vector.java
 package com.game;
 
 public class Vector {
     // dx , dy 변수
-    int dx;
-    int dy;
+    double dx;
+    double dy;
 
     public Vector() {
         dx = 0;
@@ -15,19 +16,19 @@ public class Vector {
         this.dy = dy;
     }
 
-    public int getDX() {
+    public double getDX() {
         return dx;
     }
 
-    public int getDY() {
+    public double getDY() {
         return dy;
     }
 
-    public void setDX(int dx) {
+    public void setDX(double dx) {
         this.dx = dx;
     }
 
-    public void setDY(int dy) {
+    public void setDY(double dy) {
         this.dy = dy;
     }
 
@@ -39,7 +40,7 @@ public class Vector {
         setDY(-getDY());
     }
 
-    public void set(int dx, int dy) {
+    public void set(double dx, double dy) {
         setDX(dx);
         setDY(dy);
     }

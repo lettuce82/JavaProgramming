@@ -7,18 +7,17 @@ public class BoundedBall extends MovableBall implements Bounded {
 
     static final int FRAME_WIDTH = 500;
     static final int FRAME_HEIGHT = 400;
-    Rectangle bounds;
-    Rectangle frameBounds;
 
     BoundedBall(int x, int y, int radius, Color color) {
-        super(x, y, radius, color);
+        super(x,y,radius,color);
         bounds = new Rectangle(x - (int) getRegion().getWidth() / 2, y - (int) getRegion().getWidth() / 2, (int) getRegion().getWidth() / 2, (int) getRegion().getWidth() / 2);
     }
 
     BoundedBall(int x, int y, int radius) {
-        this(x, y, radius, DEFAULT_COLOR);
+        this(x,y,radius,Color.BLACK);
     }
 
+    Rectangle bounds;
 
     Rectangle getBounds() {
         return bounds;
@@ -28,8 +27,8 @@ public class BoundedBall extends MovableBall implements Bounded {
         this.bounds = bounds;
     }
 
-    boolean isOutOfBounds() {
-        return (getRegion().getMinX() < getBounds().getMinX() || getRegion().getMaxX() > getBounds().getMaxX() || getRegion().getMinY() < getBounds().getMinY() || getRegion().getMaxY() > getBounds().getMaxY() );
+    public boolean isOutOfBounds() {
+        return (getX() - getRadius() < getBounds().getMinX() || getX() + getRadius() > getBounds().getMaxX() || getY() - getRadius() < getBounds().getMinY() || getY() + getRadius() > getBounds().getMaxY() );
     }
 
     @Override
@@ -37,17 +36,22 @@ public class BoundedBall extends MovableBall implements Bounded {
         super.move();
     }
 
-    public void bounce(Regionable otherBall) {
-        // 객체의 이동 전 위치와 이동 후 위치를 비교하여 테두리에 닿았는지 확인
-        int newX = (int) getRegion().getX();
-        int newY = (int) getRegion().getY();
-    
-        // 테두리에 닿았을 경우에만 반동을 줌
-        if (newX - getWidth() / 2< bounds.getMinX() || newX + getWidth() / 2 > bounds.getMaxX()) {
-            setDX(-getDX());
-        }
-        if (newY - getWidth() / 2 < bounds.getMinY() || newY + getWidth() / 2 > bounds.getMaxY()) {
-            setDY(-getDY());
+    public void bounce(Regionable other) {
+        Rectangle intersection = getRegion().intersection(other.getRegion());
+        
+        // 만약 충돌이 감지되었다면
+        if (!intersection.isEmpty()) {
+            double dx = getDX();
+            double dy = getDY();
+            
+            // 충돌이 발생한 축에 따라 공의 이동 방향을 조절
+            if (intersection.getWidth() < intersection.getHeight()) {
+                // 충돌이 x 축 방향으로 발생한 경우
+                setDX(-dx); // x 축 이동 방향 반전
+            } else {
+                // 충돌이 y 축 방향으로 발생한 경우
+                setDY(-dy); // y 축 이동 방향 반전
+            }
         }
     }
 }

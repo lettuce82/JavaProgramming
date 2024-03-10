@@ -20,30 +20,30 @@ public class MovableBox extends PaintableBox implements Movable {
         return motion;
     }
 
-    public int getDX() {
+    public double getDX() {
         return motion.getDX();
     }
 
-    public int getDY() {
+    public double getDY() {
         return motion.getDY();
     }
 
-    public void setDX(int dx) {
+    public void setDX(double dx) {
         motion.setDX(dx);
     }
 
-    public void setDY(int dy) {
+    public void setDY(double dy) {
         motion.setDY(dy);
     }
 
     public void move() {
-        int newX = (int)getRegion().getCenterX() + getDX();
-        int newY = (int)getRegion().getCenterY() + getDY();
+        double newX = getRegion().getCenterX() + getDX();
+        double newY = getRegion().getCenterY() + getDY();
 
         moveTo(newX, newY);
     }
 
-    public void moveTo(int x, int y) {
+    public void moveTo(double x, double y) {
         setX(x);
         setY(y);
     }

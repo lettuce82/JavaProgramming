@@ -30,7 +30,6 @@ public class BoundedBox extends MovableBox implements Bounded {
     }
 
     boolean isOutOfBounds() {
-        
         return (getX() - getWidth() < getBounds().getMinX() || getX() + getWidth() > getBounds().getMaxX() || getY() - getWidth() < getBounds().getMinY() || getY() + getWidth() > getBounds().getMaxY() );
     }
 

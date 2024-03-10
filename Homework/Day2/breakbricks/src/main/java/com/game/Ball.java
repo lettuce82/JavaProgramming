@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 public class Ball implements Regionable {
     static int getRegionCallCount = 0;
     static int count = 0;
+    int radius = 0;
     int id = ++count;
     Rectangle region;
 
@@ -21,6 +22,7 @@ public class Ball implements Regionable {
         }
 
         region = new Rectangle(x - radius, y - radius, 2 * radius, 2 * radius);
+        this.radius = radius;
     }
 
     @Override
@@ -36,13 +38,24 @@ public class Ball implements Regionable {
         return (int)region.getHeight();
     }
 
-
-    void setX(int x) {
-        region.setLocation(x - getWidth() / 2, getLocation().getY() - getHeight() / 2);
+    int getRadius() {
+        return this.radius;
     }
 
-    void setY(int y) {
-        region.setLocation(getLocation().getX() - getWidth() / 2, y - getHeight() / 2);
+    public int getX() {
+        return (int) region.getCenterX();
+    }
+
+    public int getY() {
+        return (int) region.getCenterY();
+    }
+
+    void setX(double x) {
+        region.setLocation((int) (x - getWidth() / 2), getLocation().getY() - getHeight() / 2);
+    }
+
+    void setY(double y) {
+        region.setLocation(getLocation().getX() - getWidth() / 2, (int) (y - getHeight() / 2));
     }
 
     public Rectangle getRegion() {
