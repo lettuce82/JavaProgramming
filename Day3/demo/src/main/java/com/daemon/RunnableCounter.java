@@ -38,7 +38,6 @@ public class RunnableCounter implements Runnable {
     }
     
     public void stop() {
-        System.out.println("되니?");
         thread.interrupt();
     }
 
@@ -53,12 +52,29 @@ public class RunnableCounter implements Runnable {
 
     public static void main(String[] args) {
 
-        RunnableCounter counter1 = new RunnableCounter("counter1", 10);
-        counter1.start();
+        RunnableCounter[] counters = new RunnableCounter[10];
+        
 
-        if (counter1.getCount() > 5) {
-            counter1.stop();
+        for (int i = 0; i < 10; i++) {
+            counters[i] = new RunnableCounter("counter" + (i + 1), 10);
+
+            counters[i].getThread().start();
+        }
+
+        boolean allStopped = false;
+        while (!allStopped) {
+            if (counters[0].getCount() > 5) {
+                for (int i = 0; i < counters.length; i++) {
+                    counters[i].stop();
+                }
+            }
+
+            allStopped = true;
+            for (int i = 0; i < counters.length; i++) {
+                if (counters[i].isAlive() ) {
+                    allStopped = false;
+                }
+            }
         }
     }
 }
-
