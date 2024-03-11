@@ -45,6 +45,7 @@ public class MovableWorld extends World {
         }
     }
     
+    
     private void moveObjects() {
         for (int i = 0; i < getCount(); i++) {
             Regionable object = get(i);
