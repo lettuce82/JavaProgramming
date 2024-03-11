@@ -1,17 +1,20 @@
 package main.java.com.daemon;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
-public class Counter {
+public class ThreadCounter extends Thread {
     int currentCount = 0;
     int maxCount = 0;
     String name;
 
-    public Counter(String name, int maxCount) {
+    public ThreadCounter(String name, int maxCount) {
         this.name = name;
         this.maxCount = maxCount;
     }
     
+    @Override
     public void run() {
         try {
             while (currentCount < maxCount) {
@@ -24,12 +27,12 @@ public class Counter {
         }
     }
     public static void main(String[] args) {
-        Counter counter1 = new Counter("counter1", 10);
-        Counter counter2 = new Counter("counter2", 10);
         LocalDateTime localDate = LocalDateTime.now();
+        ThreadCounter counter1 = new ThreadCounter("counter1", 10);
+        ThreadCounter counter2 = new ThreadCounter("counter2", 10);
         System.out.println("start: " + localDate.now());
-        counter1.run();
-        counter2.run();
+        counter1.start();
+        counter2.start();
         System.out.println("end: " + localDate.now());
     }
 }
