@@ -1,11 +1,11 @@
 package com.thread;
 
-public class SharedCounter extends Thread {
+public class SharedCounter2 extends Thread {
     SharedCount sharedCount;
     int count;
     int maxCount;  
 
-    public SharedCounter(String name, int maxCount, SharedCount sharedCount) {
+    public SharedCounter2(String name, int maxCount, SharedCount sharedCount) {
         setName(name);
         this.sharedCount = sharedCount;
         this.maxCount = maxCount;
@@ -17,7 +17,7 @@ public class SharedCounter extends Thread {
         while (count < maxCount) {
             count++;
             synchronized(sharedCount) {
-                sharedCount.increment();
+                sharedCount.increment2();
             }
         }
     }
