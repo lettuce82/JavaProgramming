@@ -13,14 +13,12 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                Thread.sleep(ThreadLocalRandom.current().nextInt(MIN_PRODUCE_SECOND, MAX_PRODUCE_SECOND + 1));
-                store.sell();
-                System.out.println("물품을 채웠습니다.");
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+        try {
+            Thread.sleep(ThreadLocalRandom.current().nextInt(MIN_PRODUCE_SECOND, MAX_PRODUCE_SECOND + 1));
+            store.sell();
+            System.out.println("물품을 채웠습니다.");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }

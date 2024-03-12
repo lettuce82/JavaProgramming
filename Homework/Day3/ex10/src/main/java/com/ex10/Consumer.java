@@ -15,18 +15,16 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                store.enter();
-                System.out.println(name + "이(가) 가게에 들어갔습니다.");
-                store.buy();
-                System.out.println(name + "이(가) 물건을 구매했습니다.");
-                Thread.sleep(ThreadLocalRandom.current().nextInt(MIN_BUY_SECOND, MAX_BUY_SECOND + 1));
-                store.exit();
-                System.out.println(name + "이(가) 가게를 나갔습니다.");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        try {
+            store.enter();
+            System.out.println(name + "이(가) 가게에 들어갔습니다.");
+            store.buy();
+            System.out.println(name + "이(가) 물건을 구매했습니다.");
+            Thread.sleep(ThreadLocalRandom.current().nextInt(MIN_BUY_SECOND, MAX_BUY_SECOND + 1));
+            store.exit();
+            System.out.println(name + "이(가) 가게를 나갔습니다.");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
