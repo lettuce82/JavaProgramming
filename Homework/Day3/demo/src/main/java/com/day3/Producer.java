@@ -18,7 +18,6 @@ public class Producer implements Runnable {
     public void run() {
         for (Store store : stores) {
             try {
-                System.out.println("입고는??");
                 store.sell();
                 Thread.sleep(ThreadLocalRandom.current().nextInt(MIN_PRODUCE_SECOND, MAX_PRODUCE_SECOND + 1));
             } catch (InterruptedException e) {

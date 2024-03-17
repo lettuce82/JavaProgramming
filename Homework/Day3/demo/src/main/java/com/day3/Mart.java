@@ -28,12 +28,12 @@ public class Mart {
         ExecutorService consumerExecutor = Executors.newFixedThreadPool(CONSUMER_NUM);
         ExecutorService producerExecutor = Executors.newFixedThreadPool(PRODUCER_NUM);
 
-        for (int i = 0; i < MAX_CONSUMER_NUM; i++) {
-            consumerExecutor.submit(new Consumer(i + "번 소비자", storeList));
-        }
-   
         for (int i = 0; i < MAX_PRODUCER_NUM; i++) {
             producerExecutor.submit(new Producer(i + "번 생산자", storeList));
+        }
+
+        for (int i = 0; i < MAX_CONSUMER_NUM; i++) {
+            consumerExecutor.submit(new Consumer(i + "번 소비자", storeList));
         }
 
         try {
@@ -68,6 +68,4 @@ public class Mart {
 
         return randomList;
     }
-    
-    
 }

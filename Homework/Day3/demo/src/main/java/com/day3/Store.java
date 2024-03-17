@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Store {
     Logger logger = LogManager.getLogger(this.getClass().getSimpleName());
+    int timeOut = 3000;
     private static final int MAX_PRODUCT = 10;
     private static final int MAX_CUSTOMER = 5;
     static final int WAIT_TIME = 5;
@@ -50,6 +51,7 @@ public class Store {
 
     public synchronized void buy() throws InterruptedException {
         productSemaphore.acquire();
+        
         if (productCount <= 0 || (!productSemaphore.tryAcquire(WAIT_TIME, TimeUnit.SECONDS))) {
             //logger.log(Level.WARN, "({})가 ({})에서 구매 포기 했습니다.(시간 초과)", Thread.currentThread().getName(), name);
             System.out.println(Thread.currentThread().getName() + "가 " + name + "에서 구매 포기 했습니다. (시간초과)");
@@ -63,6 +65,9 @@ public class Store {
     }
 
     public synchronized void sell() throws InterruptedException {
+        if (productSemaphore.tryAcquire(timeOut, TimeUnit.MILLISECONDS)) {
+            
+        }
         productSemaphore.acquire();
         if (productCount >= maxStoreItemNum || (!productSemaphore.tryAcquire(WAIT_TIME, TimeUnit.SECONDS))) {
             //logger.log(Level.WARN, "({})가 ({})에서 납품 포기 했습니다.(시간 초과)", Thread.currentThread().getName(), name);
@@ -74,6 +79,6 @@ public class Store {
         // logger.info("({})가 ({})에 납품 했습니다. (재고량 : {}/{})", 
         // Thread.currentThread().getName(), name, productCount, MAX_PRODUCT);
         System.out.println(Thread.currentThread().getName() + "가 " + name + "에서 납품했습니다. (재고량 : " + productCount + " / " + maxStoreItemNum + ")");
-        productSemaphore.release();
+        productSemaphore.release();  
     }
 }
