@@ -1,0 +1,210 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.day6.Main",
+            "projectName": "com.day6-demo"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "TestEventFrame",
+            "request": "launch",
+            "mainClass": "TestEventFrame",
+            "projectName": "ballworld"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.example.nhnacademy.Main",
+            "projectName": "ballworld"
+        },
+        {
+            "type": "java",
+            "name": "TestWorld",
+            "request": "launch",
+            "mainClass": "com.example.nhnacademy.TestWorld",
+            "projectName": "ballworld"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "com.game.Main",
+            "projectName": "breakbricks"
+        },
+        {
+            "type": "java",
+            "name": "TestWorld(1)",
+            "request": "launch",
+            "mainClass": "com.game.TestWorld",
+            "projectName": "breakbricks"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "com.day3.Test",
+            "projectName": "com.day3-demo"
+        },
+        {
+            "type": "java",
+            "name": "Exam01",
+            "request": "launch",
+            "mainClass": "com.day5.Exam01",
+            "projectName": "com.day4-demo"
+        },
+        {
+            "type": "java",
+            "name": "Exam02",
+            "request": "launch",
+            "mainClass": "com.day5.Exam02",
+            "projectName": "com.day4-demo"
+        },
+        {
+            "type": "java",
+            "name": "Exam03",
+            "request": "launch",
+            "mainClass": "com.day5.Exam03",
+            "projectName": "com.day4-demo"
+        },
+        {
+            "type": "java",
+            "name": "RunnableCounter",
+            "request": "launch",
+            "mainClass": "com.day5.RunnableCounter",
+            "projectName": "com.day4-demo"
+        },
+        {
+            "type": "java",
+            "name": "BreakBricksGame",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.BreakBricksGame",
+            "projectName": "com.nhnacademy-ballworld"
+        },
+        {
+            "type": "java",
+            "name": "CannonGame",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.CannonGame",
+            "projectName": "com.nhnacademy-ballworld"
+        },
+        {
+            "type": "java",
+            "name": "FrameDemo01",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.FrameDemo01",
+            "projectName": "com.nhnacademy-graphics"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main",
+            "projectName": "com.nhnacademy-pssolution"
+        },
+        {
+            "type": "java",
+            "name": "Main(3)",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main",
+            "projectName": "com.nhnacademy-rational"
+        },
+        {
+            "type": "java",
+            "name": "Counter",
+            "request": "launch",
+            "mainClass": "com.thread.Counter",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "DeadlockExample",
+            "request": "launch",
+            "mainClass": "com.thread.DeadlockExample",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "Exam",
+            "request": "launch",
+            "mainClass": "com.thread.Exam",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "LivelockExample",
+            "request": "launch",
+            "mainClass": "com.thread.LivelockExample",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "Main(4)",
+            "request": "launch",
+            "mainClass": "com.thread.Main",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "RunnableCounter(1)",
+            "request": "launch",
+            "mainClass": "com.thread.RunnableCounter",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "ThreadCounter",
+            "request": "launch",
+            "mainClass": "com.thread.ThreadCounter",
+            "projectName": "com.thread-demo"
+        },
+        {
+            "type": "java",
+            "name": "FramDemo01",
+            "request": "launch",
+            "mainClass": "com.example.nhnacademy.FramDemo01",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Main(5)",
+            "request": "launch",
+            "mainClass": "com.example.nhnacademy.Main",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "SierpinskiTriangle",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.SierpinskiTriangle",
+            "projectName": "drawtreentryangle"
+        },
+        {
+            "type": "java",
+            "name": "drawTree",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.drawTree",
+            "projectName": "drawtreentryangle"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main",
+            "projectName": "rational"
+        }
+    ]
+}
