@@ -3,12 +3,11 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
-//import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Option.Builder;
+import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-public class Option {
+public class CommandOption {
     public static void main(String[] args) throws ParseException {
         Options options = new Options();
 
@@ -18,7 +17,7 @@ public class Option {
         // Option classPath1 = Option.build();
         // 아래와 같음
 
-        org.apache.commons.cli.Option classPath = org.apache.commons.cli.Option.builder("classpath")
+        Option classPath = Option.builder("classpath")
             .longOpt("class-path")
             .hasArg()
             .argName("path")
@@ -26,7 +25,7 @@ public class Option {
             .build();
         options.addOption(classPath);
 
-        org.apache.commons.cli.Option module = org.apache.commons.cli.Option.builder("m")
+        Option module = Option.builder("m")
             .longOpt("module")
             .hasArg()
             .argName("module")
@@ -34,17 +33,17 @@ public class Option {
             .build();
         options.addOption(module);
 
-        org.apache.commons.cli.Option group = org.apache.commons.cli.Option.builder("g")
+        Option group = Option.builder("g")
             .desc("Global")
             .build();
         options.addOption(group);
 
-        org.apache.commons.cli.Option version = org.apache.commons.cli.Option.builder("v")
+        Option version = Option.builder("v")
             .desc("Version")
             .build();
         options.addOption(version);
 
-        org.apache.commons.cli.Option help = org.apache.commons.cli.Option.builder("h")
+        Option help = Option.builder("h")
             .longOpt("help")
             .desc("Help")
             .build();
