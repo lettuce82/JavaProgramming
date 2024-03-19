@@ -1,19 +1,16 @@
 package com.example;
 
-import org.json.JSONObject;
-
 public class Person {
     String name;
-    JSONObject addressObject = new JSONObject();
+    Address address;
 
-    public Person(String name) {
+    public Person(String name, Address address) {
         this.name = name;
-        addressObject.put("code", 13487);
-        addressObject.put("city", "Seongnam");
+        this.address = address;
     }
 
-    public JSONObject getAddress() {
-        return this.addressObject;
+    public Address getAddress() {
+        return this.address;
     }
 
     public String getName() {

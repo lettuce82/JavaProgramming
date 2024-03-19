@@ -12,6 +12,8 @@ public class Exam1 {
         object.put("address", addressObject);
         object.put("name", "nhn"); //생성하기
         object.put("name", "nhn academy"); //생성 후 put()은 값 변경
+        object.put("id", "12534"); //생성 후 put()은 값 변경
+        object.optInt("id", 1234);
 
         System.out.println(object);
         //{"address":{"code":13487,"city":"Seongnam"},"name":"nhn"}

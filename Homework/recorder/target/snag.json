@@ -1,0 +1,32 @@
+{
+   "item": [
+      {
+         "moveSpeed": 23,
+         "defence": 23,
+         "stamina": 23,
+         "attackSpeed": 23,
+         "model": "mode1",
+         "power": 23,
+         "id": "1234"
+      },
+      {
+         "moveSpeed": 23,
+         "defence": 23,
+         "stamina": 23,
+         "attackSpeed": 23,
+         "model": "mode1",
+         "power": 23,
+         "id": "1234"
+      }
+   ],
+   "user": [
+      {
+         "nickName": "b",
+         "id": "1234"
+      },
+      {
+         "nickName": "b",
+         "id": "1234"
+      }
+   ]
+}
