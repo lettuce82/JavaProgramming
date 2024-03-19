@@ -6,11 +6,52 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CommandOption",
+            "request": "launch",
+            "mainClass": "com.day6.CommandOption",
+            "projectName": "demo",
+            "args": [
+                "-classpath",
+                "./src/lib;./src/modules",
+                "-m",
+                "slf4j",
+                "-g",
+                "./src/main/java/Main.java",
+                "-v",
+                "a",
+                "b",
+                "c"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "CommandLine",
+            "request": "launch",
+            "mainClass": "com.day6.CommandLine",
+            "projectName": "demo",
+            "args": [
+                "-classpath",
+                "./src/lib;./src/modules",
+                "-m",
+                "slf4j",
+                "-g",
+                "./src/main/java/Main.java",
+                "-h"
+            ]
+        },
+        {
+            "type": "java",
             "name": "CommandLine",
             "request": "launch",
             "mainClass": "com.day6.commandLine",
             "projectName": "demo",
-            "args": ["-classpath", "./src/lib;./src/modules", "-m", "slf4j", "./src/main/java/Main.java"]
+            "args": [
+                "-classpath",
+                "./src/lib;./src/modules",
+                "-m",
+                "slf4j",
+                "./src/main/java/Main.java"
+            ]
         },
         {
             "type": "java",
@@ -18,7 +59,15 @@
             "request": "launch",
             "mainClass": "com.day6.Option",
             "projectName": "demo",
-            "args": ["-classpath", "./src/lib;./src/modules", "-m", "slf4j", "-g", "./src/main/java/Main.java", "-h"]
+            "args": [
+                "-classpath",
+                "./src/lib;./src/modules",
+                "-m",
+                "slf4j",
+                "-g",
+                "./src/main/java/Main.java",
+                "-h"
+            ]
         },
         {
             "type": "java",
