@@ -18,8 +18,6 @@ public class Db {
     }
     
     public void add(User user, String dbFileName, String type) {
-        System.out.println("add 안");
-
         JSONObject temp = new JSONObject(user);
         userArray.put(temp);
         userObject.put(type, userArray);
@@ -27,7 +25,6 @@ public class Db {
     }
 
     public void add(Item item, String dbFileName, String type) {
-        System.out.println("add 안");
         JSONObject temp = new JSONObject(item);
         System.out.println("item" + item.getModel());
         itemArray.put(temp);
@@ -40,13 +37,10 @@ public class Db {
     }
 
     public void list(String type, String dbFileName) {
-        System.out.println("list 안");
         if (type.equals("user")) {
-            System.out.println("user 안");
             jsonWriter.read(dbFileName, type);
         }
         if (type.equals("item")) {
-            System.out.println("item 안");
             jsonWriter.read(dbFileName, type);
         }
     }

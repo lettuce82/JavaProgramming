@@ -167,45 +167,22 @@ public class CreateOption {
             String typeValues = commandLine.getOptionValue(options.getOption("type"));
             if (commandLine.hasOption(options.getOption("id"))) {
                 String idValues = commandLine.getOptionValue(options.getOption("id"));
-                if (commandLine.hasOption(options.getOption("name"))) {
+                if (typeValues.equals("user")) {
                     String nameValues = commandLine.getOptionValue(options.getOption("name"));
-                    if (commandLine.hasOption(options.getOption("dbFile"))) {
-                        String dbFileValues = commandLine.getOptionValue(options.getOption("dbFile"));
-                        User user = new User(idValues, nameValues);
-                        db.add(user, dbFileValues, typeValues);
-                    }
-                }
-    
-                handleItemOption(commandLine, db, typeValues);
-            }
-        }
-    }
-    
-    private void handleItemOption(CommandLine commandLine, Db db, String typeValues) {
-        if (commandLine.hasOption(options.getOption("id"))) {
-            String idValues = commandLine.getOptionValue(options.getOption("id"));
-            if (commandLine.hasOption(options.getOption("model"))) {
-                String modelValues = commandLine.getOptionValue(options.getOption("model"));
-                if (commandLine.hasOption(options.getOption("stamina"))) {
+                    String dbFileValues = commandLine.getOptionValue(options.getOption("dbFile"));
+                    User user = new User(idValues, nameValues);
+                    db.add(user, dbFileValues, typeValues);
+                } else if (typeValues.equals("item")) {
+                    String modelValues = commandLine.getOptionValue(options.getOption("model"));
                     String staminaValues = commandLine.getOptionValue(options.getOption("stamina"));
-                    if (commandLine.hasOption(options.getOption("power"))) {
-                        String powerValues = commandLine.getOptionValue(options.getOption("power"));
-                        if (commandLine.hasOption(options.getOption("defence"))) {
-                            String defenceValues = commandLine.getOptionValue(options.getOption("defence"));
-                            if (commandLine.hasOption(options.getOption("moveSpeed"))) {
-                                String moveSpeedValues = commandLine.getOptionValue(options.getOption("moveSpeed"));
-                                if (commandLine.hasOption(options.getOption("attackSpeed"))) {
-                                    String attackSpeedValues = commandLine.getOptionValue(options.getOption("attackSpeed"));
-                                    if (commandLine.hasOption(options.getOption("dbFile"))) {
-                                        String dbFileValues = commandLine.getOptionValue(options.getOption("dbFile"));
-                                        Item item = new Item(idValues, modelValues, Integer.parseInt(staminaValues), Integer.parseInt(powerValues),
-                                            Integer.parseInt(defenceValues), Integer.parseInt(moveSpeedValues), Integer.parseInt(attackSpeedValues));
-                                        db.add(item, dbFileValues, typeValues);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    String powerValues = commandLine.getOptionValue(options.getOption("power"));
+                    String defenceValues = commandLine.getOptionValue(options.getOption("defence"));
+                    String moveSpeedValues = commandLine.getOptionValue(options.getOption("moveSpeed"));
+                    String attackSpeedValues = commandLine.getOptionValue(options.getOption("attackSpeed"));
+                    String dbFileValues = commandLine.getOptionValue(options.getOption("dbFile"));
+                    Item item = new Item(idValues, modelValues, Integer.parseInt(staminaValues), Integer.parseInt(powerValues),
+                        Integer.parseInt(defenceValues), Integer.parseInt(moveSpeedValues), Integer.parseInt(attackSpeedValues));
+                    db.add(item, dbFileValues, typeValues);
                 }
             }
         }
