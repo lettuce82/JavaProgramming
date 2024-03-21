@@ -1,8 +1,6 @@
 package com.nhnacademy;
 
 import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
@@ -10,7 +8,7 @@ import org.apache.commons.cli.Options;
 public class CreateOption {
     Db db = new Db();
     Options options = new Options();
-    CommandLineParser parser = new DefaultParser();
+    
 
     public CreateOption() {
         Option add = Option.builder("a")

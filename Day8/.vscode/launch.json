@@ -6,40 +6,55 @@
     "configurations": [
         {
             "type": "java",
-            "name": "EcoServer",
-            "request": "launch",
-            "mainClass": "com.example.EcoServer",
-            "projectName": "demo"
-        },
-        {
-            "type": "java",
-            "name": "Exam03",
-            "request": "launch",
-            "mainClass": "com.example.Exam03",
-            "projectName": "demo"
-        },
-        {
-            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
         {
             "type": "java",
+            "name": "EcoServer",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.EcoServer",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Exam01",
             "request": "launch",
-            "mainClass": "com.example.Exam01",
-            "projectName": "demo",
-            "args": [
-                "8080"
-            ]
+            "mainClass": "com.nhnacademy.Exam01",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Exam03",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam03",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Exam04",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam04",
+            "projectName": "demo"
         },
         {
             "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "com.example.Main",
+            "mainClass": "com.nhnacademy.Main",
             "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Server",
+            "projectName": "demo",
+            "args": [
+                "snc",
+                "-l"
+            ]
         }
     ]
 }
