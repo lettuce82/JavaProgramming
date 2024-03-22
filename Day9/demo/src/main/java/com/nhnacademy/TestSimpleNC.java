@@ -1,3 +1,5 @@
+// SimpleNC.java
+
 package com.nhnacademy;
 
 import java.io.BufferedReader;
@@ -5,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-//import java.text.ParseException;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.commons.cli.CommandLine;
@@ -13,7 +14,7 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 
-public class SimpleNC {
+public class TestSimpleNC {
     public static void main(String[] args) {
         Options options = new Options();
 
@@ -27,14 +28,14 @@ public class SimpleNC {
                 List<Thread> clientHandlerList = new LinkedList<>();
                 List<NetCat> netcatList = new LinkedList<>();
 
-                //keyboard
-                Thread inputAgent = new Thread(()-> {
+                // Keyboard input
+                Thread inputAgent = new Thread(() -> {
                     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
                     String line;
-                    
+
                     try {
                         while ((line = input.readLine()) != null) {
-                            synchronized(netcatList) {
+                            synchronized (netcatList) {
                                 for (NetCat netCat : netcatList) {
                                     netCat.send(line + "\n");
                                 }
@@ -45,27 +46,8 @@ public class SimpleNC {
                     }
                 });
 
-                //monitors
-                Thread outputAgent = new Thread(() -> {
-                    while (!Thread.currentThread().isInterrupted()) {
-                        synchronized(netcatList) {
-                            for (NetCat netCat : netcatList) {
-                                if (!netCat.isEmptyReceiveQueue()) {
-                                    String line = netCat.receive();
-                                    System.out.println(line);
-                                }
-                            }
-                        }
-                        try {
-                            Thread.sleep(10);
-                        } catch (InterruptedException ignore) {
-                            Thread.currentThread().interrupt();
-                        }
-                    }
-                });
-
+                // Start keyboard input thread
                 inputAgent.start();
-                outputAgent.start();
 
                 ServerSocket serverSocket = new ServerSocket(1234);
                 while (!Thread.currentThread().isInterrupted()) {
