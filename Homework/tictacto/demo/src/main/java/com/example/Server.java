@@ -33,7 +33,7 @@ public class Server {
                 Socket socket = new Socket(host, port);
                 User user = new User(socket);
 
-                user.start();
+                //user.start
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
